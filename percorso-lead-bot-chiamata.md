@@ -122,8 +122,8 @@ Alla scelta della fascia, due orari lontani dentro la fascia:
 | «Non voglio essere chiamato, scrivetemi» | ⚠️ **Da decidere con i consulenti.** Ipotesi di lavoro: *«Non è un problema, non ti chiamiamo se non vuoi 😊 Dimmi tu quando possiamo sentirci, anche due minuti.»* + due orari. Se rifiuta ancora, la chat passa al setter in turno. Finché i consulenti non rispondono, questo caso resta «come oggi»: vedi il paragrafo 3.3 bis. |
 | Chiede esplicitamente la videochiamata o Google Meet | Prenota come oggi. **Solo in questo caso** il bot prenota la consulenza. |
 | Vuole prenotare un taglio, cerca lavoro, spam, minorenne | Come oggi: chiusura gentile, nessuna telefonata. |
-| Già cliente | Come oggi: numero assistenza 0915640490. |
-| «Non l'ho lasciato io» | Come oggi: scuse, pausa, **nessuna chiamata**. |
+| Già cliente | **Primo messaggio diverso** (decisione del 30/10): il bot si presenta come assistente virtuale del reparto commerciale, dice che la richiesta risulta ma il contatto è già cliente, e lo rimanda al numero dell'assistenza. Nessuna telefonata del setter. Vedi 3.6. |
+| «Non l'ho lasciato io» | Come oggi: scuse, pausa, **nessuna chiamata**. Novità del 30/10: l'avviso resta **ben visibile sulla scheda del lead**, così i setter evitano di chiamarlo. |
 | Ha già un appuntamento fissato | Come oggi: link, sposta, annulla. |
 | Risponde a un invito al Tour o è iscritto a un evento | Come oggi: i rami eventi non cambiano. |
 | Domande tecniche, fiscali, sulle funzioni | *«Te lo conferma chi ti chiama.»* Non conferma e non smentisce. |
@@ -161,8 +161,59 @@ Prima di comporre il numero, il setter fa **30 secondi di lettura**:
 2. Se il lead ha scelto lui l'orario o ha premuto «Adesso non posso, chiamami dopo»: non si apre a freddo: si ricorda la richiamata che ha prenotato lui.
    - Orario scelto: *«Ciao [nome]! Hai prenotato una richiamata per le [ora]: eccomi, ti chiamo all'orario che avevi scelto.»*
    - Chiamata subito dopo il messaggio «tra pochi minuti» (corsia A): *«Ciao [nome]! Hai prenotato una richiamata per adesso: eccomi.»*
-3. Se ha premuto «Non l'ho lasciato io»: **non si chiama**. La scheda va decisa.
-4. Se il lead sta ancora chattando col bot, il setter che chiama lo interrompe: serve una regola chiara su chi vince. ⚠️ Vedi domande al paragrafo 5.4.
+3. Se ha premuto «Non l'ho lasciato io»: **non si chiama**. L'avviso è ben visibile sulla scheda.
+4. Se il lead sta ancora chattando col bot, vince il setter: quando clicca «Chiama» sulla scheda, il bot si ferma e va in pausa da solo (decisione del 30/10).
+
+---
+
+### 3.6 Cosa deve fare WeCRM sulla scheda del lead (richieste del 30/10)
+
+Sei richieste di Marco. Tre riguardano il primo contatto e la scheda, tre il momento della chiamata. Sono tutte da sviluppare e da collaudare: nessuna è ancora fatta.
+
+**1 · «Non l'ho lasciato io» deve vedersi sulla scheda.** Quando il lead risponde così, sulla scheda compare un avviso ben visibile, così i setter evitano di chiamarlo. Il bot si ferma e non parte nessuna telefonata, come già succede oggi.
+- Da chiarire: dove compare (scheda, lista lead, card). ⚠️ Proposta: in tutti e tre i posti.
+- Da chiarire: il pulsante «Chiama» resta attivo? ⚠️ Proposta: resta attivo, ma chiede una conferma.
+
+**2 · Chi è già cliente riceve un primo messaggio diverso** (template C, ⚠️ bozza da approvare). Il bot non manda il messaggio A o B. Manda questo, poi si ferma. Nessuna telefonata del setter.
+> Ciao! Sono l'assistente virtuale di WeGest e ti scrivo dal reparto commerciale. Ci risulta una tua richiesta di informazioni, ma ci risulti già cliente. Per qualsiasi cosa ti invitiamo a contattare l'assistenza al numero [numero assistenza clienti]: questo numero è gestito dal reparto commerciale per i potenziali clienti.
+
+- ⚠️ **Da confermare:** il numero. Ho capito che deve essere quello dell'assistenza clienti (oggi il bot cita 0915640490), perché questo numero è del commerciale. Se intendevi un altro numero, va corretto.
+- Un cliente che chiede informazioni per un secondo salone o per un servizio in più viene rimandato all'assistenza. Va bene, o serve un'eccezione?
+- Cosa succede allo stato del lead nel CRM quando risulta già cliente.
+- È un template Meta nuovo: va approvato come gli altri e richiede giorni.
+
+**3 · Le note del lead nascono dal payload di arrivo.** Le note sulla scheda e sulle card della lista lead devono essere elaborate dal payload con cui il lead arriva, e devono contenere anche qualcosa di informativo sul **nuovo form Facebook**. Il payload di Calendly va ignorato, a meno che contenga informazioni precise e utili al consulente per fare la chiamata.
+
+*Un caso reale (30/10).* Sulla card di un lead (Monica M., consulenza fissata per mercoledì 4 novembre alle 14:00 con Andrea) si vedono il nome, il telefono, l'orario, l'origine Instagram e la scritta «Fissata dal cliente · host Andrea P.». Il riquadro dice «contatto arrivato il 29/10; mai chiamato» e ripete i dati dell'appuntamento. **Manca quello che il lead ha lasciato nel form Facebook.** Il nuovo form fa domande qualificanti più interessanti del solito, ma chi apre la card non le vede. Andrea arriverebbe alla consulenza senza sapere cosa ha risposto. È l'esempio da cui partire: le risposte del form devono comparire nella nota, in modo leggibile, prima della consulenza.
+
+- Da verificare: che le note della lista lead e delle singole card mostrino le informazioni del nuovo form Facebook, su un campione di lead recenti (nota confrontata con payload).
+- Da verificare: che nessuna nota sia riempita con il payload di Calendly.
+- Da chiarire: quali campi del form devono comparire in nota, e quali informazioni di Calendly sono utili al consulente (per esempio le risposte alle domande di prenotazione). Lo possono dire Andrea e i consulenti.
+
+**4 · Il clic su «Chiama» ferma il bot.** Quando qualcuno clicca «Chiama» sulla scheda del lead, il bot viene interrotto e messo in pausa in automatico. Vince sempre il setter: questo chiude la domanda su chi ha la precedenza quando un lead chatta e viene chiamato.
+- Da chiarire: quando si toglie la pausa. Oggi scade da sola dopo 24 ore e si può togliere a mano con «Riattiva bot». ⚠️ Proposta: resta in pausa finché la toglie un operatore, o scade come oggi.
+- Da chiarire: cosa succede se la chiamata non va a buon fine. Il bot riprende o resta fermo?
+
+**5 · Il pop-up della chiamata, in basso a destra.** Al clic su «Chiama» compare in basso a destra un pop-up evidenziato che dice che hai una chiamata aperta. Non è il tastierino: mostra la cornetta per riagganciare e le azioni da fare su quel lead, cioè **prendere note** e **fissare l'appuntamento**. Quando la chiamata si chiude, la nota viene salvata da sola sulla chiamata, senza altri passaggi.
+- ⚠️ **Da verificare per prima, come WeCRM sa che la chiamata è partita e finita.** Un semplice clic su un link di telefono non lo comunica. Dipende dal centralino o da come parte la chiamata. Senza questo il salvataggio automatico della nota non si può fare.
+- Se il setter chiude la scheda o il browser a metà chiamata, la nota non deve perdersi. ⚠️ Proposta: salvataggio continuo della bozza.
+- L'esito della chiamata resta obbligatorio alla chiusura?
+- Fissare la consulenza dal pop-up usa lo stesso flusso di prenotazione di oggi (Calendly, due orari).
+
+**6 · La chat mostra «chiamata in corso».** Può succedere che un setter chiami un lead mentre un collega sta chattando con lo stesso lead. Se c'è una chiamata aperta, la chat di quel lead mostra un mini pop-up «Chiamata in corso».
+- Mostrare anche chi sta chiamando e da quanto tempo? ⚠️ Proposta: sì, così un collega sa a chi chiedere.
+- Cosa succede se una chiamata resta «aperta» per errore. ⚠️ Proposta: si chiude da sola dopo un tempo massimo.
+
+### 3.7 Cosa cambia nel lavoro di ogni giorno
+
+| Chi | Cosa fa nel percorso nuovo |
+|---|---|
+| Il lead | Riceve un messaggio breve, poi una telefonata. Nessuna cifra in chat. Se è già cliente riceve un messaggio suo. Se dice «non l'ho lasciato io», nessuno lo chiama. |
+| Il bot | Fa un solo lavoro: portare il lead a una telefonata a cui risponde. Non qualifica, non fa il pitch, non dice prezzi. Si ferma da solo quando un setter clicca «Chiama». |
+| Il setter | Legge la scheda e le note prima di chiamare. Apre con «Ciao [nome]!» oppure ricorda la richiamata prenotata. Clicca «Chiama»: compare il pop-up in basso a destra, prende note lì dentro e, se c'è interesse, fissa la consulenza. A fine chiamata la nota si salva da sola. |
+| Chi risponde in chat | Vede «Chiamata in corso» nella chat del lead e non scrive mentre il setter è al telefono. |
+| Andrea | Arriva alla consulenza con la scheda completa: le risposte del form Facebook, la nota della chiamata (problema, programma usato, quante persone, obiettivo, chi decide) e niente rumore di Calendly. |
+| Chi guarda la scheda del lead | Vede subito se il lead ha detto «non l'ho lasciato io», se è già cliente e se c'è una chiamata aperta. |
 
 ---
 
@@ -342,7 +393,7 @@ Sono le domande per chi chiama davvero. Servono a capire se lo script regge nell
 7. ⚠️ Se i lead non ancora verificati contano ai fini delle provvigioni dei setter (oggi no): vale anche per le telefonate "scelte dal lead"?
 8. ⚠️ Cosa facciamo con chi risponde «non l'ho lasciato io» ma poi si rifà vivo.
 9. ⚠️ Una regola unica sul prezzo per tutti i canali, per esempio anche per i post e le VSL: oggi dice «non si dice» solo per bot e setter.
-10. ⚠️ Chi vince quando il lead sta chattando col bot e il setter vuole chiamare.
+10. ⚠️ Quando si toglie la pausa del bot dopo il clic su «Chiama», e cosa fare se la chiamata non va a buon fine (vedi 3.6). La precedenza è decisa: vince il setter.
 
 ### 5.4 Per chi sviluppa (WeCRM) e per il collaudo
 
@@ -359,6 +410,12 @@ Sono le domande per chi chiama davvero. Servono a capire se lo script regge nell
 | 7 | Handoff «preferisce chat» al setter in turno | La chat compare tra i lead da lavorare e si chiude con gli stessi esiti di una chiamata. |
 | 8 | KPI | Risposta alla prima chiamata divisa per modalità A/B e per telefonate "Ha scelto lui l'orario". |
 | 9 | Banco di prova del bot | Rifare i casi: i 100 casi assurdi del 29/09 valutano ancora la qualifica. |
+| 10 | Avviso «Non l'ho lasciato io» | Ben visibile su scheda, lista lead e card. Richiesta del 30/10. |
+| 11 | Template C · già cliente | Primo messaggio dedicato, nessuna telefonata del setter. Template Meta nuovo da approvare. Richiesta del 30/10. |
+| 12 | Note del lead dal payload di arrivo | Includere le informazioni del nuovo form Facebook, ignorare il payload di Calendly salvo campi utili al consulente. Verifica su un campione di lead. Richiesta del 30/10. |
+| 13 | Pausa automatica del bot su «Chiama» | Il clic su «Chiama» interrompe il bot e lo mette in pausa. Richiesta del 30/10. |
+| 14 | Pop-up della chiamata | In basso a destra: chiamata aperta, cornetta, note, fissa consulenza. Nota salvata da sola a fine chiamata. Prima va verificato come si rileva inizio e fine della chiamata. Richiesta del 30/10. |
+| 15 | «Chiamata in corso» nella chat | Mini pop-up nella chat del lead mentre c'è una chiamata aperta. Richiesta del 30/10. |
 
 **Da verificare con i dati**
 1. Quanto tempo passa oggi tra l'arrivo del lead e la prima chiamata? Quanto spesso rispettiamo i 5 minuti?
