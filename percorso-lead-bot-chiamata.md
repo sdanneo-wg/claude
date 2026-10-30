@@ -122,7 +122,7 @@ Alla scelta della fascia, due orari lontani dentro la fascia:
 | «Non voglio essere chiamato, scrivetemi» | ⚠️ **Da decidere con i consulenti.** Ipotesi di lavoro: *«Non è un problema, non ti chiamiamo se non vuoi 😊 Dimmi tu quando possiamo sentirci, anche due minuti.»* + due orari. Se rifiuta ancora, la chat passa al setter in turno. Finché i consulenti non rispondono, questo caso resta «come oggi»: vedi il paragrafo 3.3 bis. |
 | Chiede esplicitamente la videochiamata o Google Meet | Prenota come oggi. **Solo in questo caso** il bot prenota la consulenza. |
 | Vuole prenotare un taglio, cerca lavoro, spam, minorenne | Come oggi: chiusura gentile, nessuna telefonata. |
-| Già cliente | **Primo messaggio diverso** (decisione del 30/10): il bot si presenta come assistente virtuale del reparto commerciale, dice che la richiesta risulta ma il contatto è già cliente, e lo rimanda al numero dell'assistenza. Nessuna telefonata del setter. Vedi 3.6. |
+| Già cliente | **Primo messaggio diverso** (decisione del 30/10): il bot si presenta come assistente virtuale del reparto commerciale, dice che la richiesta risulta ma il contatto è già cliente, e lo invita a contattare il numero 0915640490 (assistenza, amministrazione e commerciale). Nessuna telefonata del setter. Vedi 3.6. |
 | «Non l'ho lasciato io» | Come oggi: scuse, pausa, **nessuna chiamata**. Novità del 30/10: l'avviso resta **ben visibile sulla scheda del lead**, così i setter evitano di chiamarlo. |
 | Ha già un appuntamento fissato | Come oggi: link, sposta, annulla. |
 | Risponde a un invito al Tour o è iscritto a un evento | Come oggi: i rami eventi non cambiano. |
@@ -175,9 +175,9 @@ Sei richieste di Marco. Tre riguardano il primo contatto e la scheda, tre il mom
 - Da chiarire: il pulsante «Chiama» resta attivo? ⚠️ Proposta: resta attivo, ma chiede una conferma.
 
 **2 · Chi è già cliente riceve un primo messaggio diverso** (template C, ⚠️ bozza da approvare). Il bot non manda il messaggio A o B. Manda questo, poi si ferma. Nessuna telefonata del setter.
-> Ciao! Sono l'assistente virtuale di WeGest e ti scrivo dal reparto commerciale. Ci risulta una tua richiesta di informazioni, ma ci risulti già cliente. Per qualsiasi cosa ti invitiamo a contattare l'assistenza al numero [numero assistenza clienti]: questo numero è gestito dal reparto commerciale per i potenziali clienti.
+> Ciao! Sono l'assistente virtuale di WeGest e ti scrivo dal reparto commerciale. Ci risulta una tua richiesta di informazioni, ma ci risulti già cliente. Per qualsiasi necessità ti invitiamo a contattarci al numero 0915640490, che segue assistenza, amministrazione e commerciale per i clienti: questo numero, invece, è gestito dal reparto commerciale per i potenziali clienti.
 
-- ⚠️ **Da confermare:** il numero. Ho capito che deve essere quello dell'assistenza clienti (oggi il bot cita 0915640490), perché questo numero è del commerciale. Se intendevi un altro numero, va corretto.
+- **Il numero nel messaggio è 0915640490** (confermato da Marco il 30/10). È il numero unico per assistenza, amministrazione e commerciale dei clienti, quindi il testo non dice «contatta l'assistenza».
 - Un cliente che chiede informazioni per un secondo salone o per un servizio in più viene rimandato all'assistenza. Va bene, o serve un'eccezione?
 - Cosa succede allo stato del lead nel CRM quando risulta già cliente.
 - È un template Meta nuovo: va approvato come gli altri e richiede giorni.
