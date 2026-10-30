@@ -158,7 +158,9 @@ La nota «[Bot WhatsApp]» sulla scheda resta, ma contiene solo quello che il le
 
 Prima di comporre il numero, il setter fa **30 secondi di lettura**:
 1. Chat e nota «[Bot WhatsApp]» sulla scheda del lead.
-2. Se il lead ha scelto lui l'orario o ha premuto «Adesso non posso, chiamami dopo»: si apre con *«Ciao [nome], ci eravamo dati appuntamento!»*, non con l'apertura a freddo.
+2. Se il lead ha scelto lui l'orario o ha premuto «Adesso non posso, chiamami dopo»: non si apre a freddo: si ricorda la richiamata che ha prenotato lui.
+   - Orario scelto: *«Ciao [nome]! Hai prenotato una richiamata per le [ora]: eccomi, ti chiamo all'orario che avevi scelto.»*
+   - Chiamata subito dopo il messaggio «tra pochi minuti» (corsia A): *«Ciao [nome]! Hai prenotato una richiamata per adesso: eccomi.»*
 3. Se ha premuto «Non l'ho lasciato io»: **non si chiama**. La scheda va decisa.
 4. Se il lead sta ancora chattando col bot, il setter che chiama lo interrompe: serve una regola chiara su chi vince. ⚠️ Vedi domande al paragrafo 5.4.
 
