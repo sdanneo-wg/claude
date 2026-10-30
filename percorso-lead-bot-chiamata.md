@@ -119,7 +119,7 @@ Alla scelta della fascia, due orari lontani dentro la fascia:
 | Il lead | Il bot |
 |---|---|
 | Chiede il prezzo | *«Il prezzo dipende da come lavora il tuo salone: te lo spiega al telefono chi ti chiama, nero su bianco.»* **Nessuna cifra, mai.** Questo supera il «69 €» del 12/10. |
-| «Non voglio essere chiamato, scrivetemi» | ⚠️ **Da decidere con i consulenti.** Ipotesi di lavoro: *«Non è un problema, non ti chiamiamo se non vuoi 😊 Dimmi tu quando possiamo sentirci, anche due minuti.»* + due orari. Se rifiuta ancora, la chat passa al setter in turno. Finché non rispondono, il bot fa come oggi. |
+| «Non voglio essere chiamato, scrivetemi» | ⚠️ **Da decidere con i consulenti.** Ipotesi di lavoro: *«Non è un problema, non ti chiamiamo se non vuoi 😊 Dimmi tu quando possiamo sentirci, anche due minuti.»* + due orari. Se rifiuta ancora, la chat passa al setter in turno. Finché i consulenti non rispondono, questo caso resta «come oggi»: vedi il paragrafo 3.3 bis. |
 | Chiede esplicitamente la videochiamata o Google Meet | Prenota come oggi. **Solo in questo caso** il bot prenota la consulenza. |
 | Vuole prenotare un taglio, cerca lavoro, spam, minorenne | Come oggi: chiusura gentile, nessuna telefonata. |
 | Già cliente | Come oggi: numero assistenza 0915640490. |
@@ -128,6 +128,25 @@ Alla scelta della fascia, due orari lontani dentro la fascia:
 | Risponde a un invito al Tour o è iscritto a un evento | Come oggi: i rami eventi non cambiano. |
 | Domande tecniche, fiscali, sulle funzioni | *«Te lo conferma chi ti chiama.»* Non conferma e non smentisce. |
 | «Sei un robot?» | *«Sono l'assistente virtuale di WeGest.»* (obbligo di trasparenza sull'AI) |
+
+### 3.3 bis · Che cosa vuol dire «come oggi» per chi non vuole essere chiamato
+
+Fino alla risposta dei consulenti (call del 3/11), **per questo solo caso il bot non applica la regola nuova**. Non usa la frase rassicurante e non spinge verso due orari di telefonata. Resta in chat con il lead e si comporta come oggi:
+
+- **La conversazione resta scritta.** Il bot continua a rispondere ai messaggi del lead.
+- **Può ancora qualificare:** chiedere settore, gestionale usato, chi decide.
+- **Può ancora prenotare la consulenza** su Calendly, proponendo due orari e chiedendo nome ed email, se il lead vuole vedere il programma.
+- **Nessun setter chiama quel lead,** a meno che un operatore prenda in mano la chat.
+- **Restano valide le regole che già fermano il bot oggi:** «non scrivetemi più» (smette e chiede il motivo), «non l'ho lasciato io» (pausa, risponde una persona) e chat già in mano a un operatore.
+
+⚠️ **Da decidere · il prompt ridotto non basta.** Quello che abbiamo scritto toglie qualifica e prenotazione, quindi «come oggi» non è possibile senza scegliere una di queste strade:
+
+1. **Tenere il pezzo del prompt attuale** su qualifica e prenotazione, solo per chi non vuole la telefonata. Più codice, due comportamenti da mantenere.
+2. **Passare subito la chat a una persona** (il setter in turno, «preferisce chat»). È già prevista come ultimo passo. Più semplice, ma serve qualcuno che risponda in chat.
+
+⚠️ **Da decidere · il prezzo.** Oggi il bot dice «si parte da 69 € al mese» (decisione del 12/10). La regola nuova dice «mai cifre» per tutti i canali. Proposta: nessuna cifra nemmeno in questo caso, altrimenti lo stesso lead trova due regole diverse.
+
+⚠️ **Da verificare.** Ho ricostruito questo comportamento dalle note del second brain (29/10 e stato del bot all'08/10), non leggendo il prompt in produzione. Va confermato con una prova reale prima del 3/11.
 
 ### 3.4 Cosa esce dal bot
 
@@ -271,7 +290,7 @@ Le domande sono divise per chi può rispondere. Per ognuna c'è il motivo, e dov
 Le prime sei sono già nel documento che gli abbiamo mandato (in bozza, da approvare da Marco prima dell'invio). Le altre le propongo io.
 
 **Già nel documento per loro**
-1. **Il lead che non vuole essere chiamato** e vuole solo scrivere: come lo gestiamo? Finché non rispondono, il bot fa come oggi.
+1. **Il lead che non vuole essere chiamato** e vuole solo scrivere: come lo gestiamo? Finché non rispondono, il bot fa come oggi (vedi 3.3 bis).
 2. **«Cosa ti ha spinto a contattarci?»**: in chat faceva smettere di rispondere. Al telefono la teniamo?
 3. **Decisore assente**: si fissa comunque o si aspetta?
 4. **Durata della consulenza** da promettere: 20, 30 o 60 minuti?
