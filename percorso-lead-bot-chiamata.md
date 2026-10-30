@@ -274,7 +274,9 @@ Poi **un solo esempio vero**, in 30-60 secondi, preso da quello che il lead ha d
 - «sapere quanto spendo, non solo quanto incasso».
 
 **Cosa si può dire, perché è vero**
-- Il Metodo WeGest nasce da 687 consulenze ai saloni, ed è nato da Marco, partito come barbiere ("From Barber to CEO").
+- «Siamo consulenti di gestione con oltre 20 anni di esperienza nei saloni di bellezza. Abbiamo aiutato migliaia di imprenditori a far crescere la propria attività.»
+- Marco è partito come barbiere ed è arrivato a guidare l'azienda ("From Barber to CEO").
+- **Attenzione ai 687.** Sono le consulenze che abbiamo **trascritto**, e sono solo quelle dell'ultimo anno. Non dire che il Metodo «nasce da 687 consulenze»: l'esperienza viene da oltre 20 anni di lavoro nei saloni.
 - *«Più di 2.000 saloni lo usano ogni giorno.»* ⚠️ Al 23/10 i clienti attivi erano circa 2.143: rileggere il numero in WeCRM prima di stamparlo nello script.
 - *«Ti seguiamo noi: formazione gratuita e senza limiti, assistenza con persone vere e una consulenza sul tuo salone.»* Non si promettono risultati.
 
